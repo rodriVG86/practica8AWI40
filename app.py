@@ -11,7 +11,6 @@ from flask import request
 from flask import jsonify, make_response
 
 import mysql.connector
-import mysql.connector.errors
 
 import datetime
 import pytz
@@ -63,26 +62,18 @@ def productos():
     LIMIT 10 OFFSET 0
     """
 
-    try:
-        cursor.execute(sql)
-        registros = cursor.fetchall()
+    cursor.execute(sql)
+    registros = cursor.fetchall()
 
-        # Si manejas fechas y horas
-        """
-        for registro in registros:
-            fecha_hora = registro["Fecha_Hora"]
+    # Si manejas fechas y horas
+    """
+    for registro in registros:
+        fecha_hora = registro["Fecha_Hora"]
 
-            registro["Fecha_Hora"] = fecha_hora.strftime("%Y-%m-%d %H:%M:%S")
-            registro["Fecha"]      = fecha_hora.strftime("%d/%m/%Y")
-            registro["Hora"]       = fecha_hora.strftime("%H:%M:%S")
-        """
-
-    except mysql.connector.errors.ProgrammingError as error:
-        print(f"Ocurrió un error de programación en MySQL: {error}")
-        registros = []
-
-    finally:
-        con.close()
+        registro["Fecha_Hora"] = fecha_hora.strftime("%Y-%m-%d %H:%M:%S")
+        registro["Fecha"]      = fecha_hora.strftime("%d/%m/%Y")
+        registro["Hora"]       = fecha_hora.strftime("%H:%M:%S")
+    """
 
     return render_template("productos.html", productos=registros)
 
