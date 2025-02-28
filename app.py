@@ -63,7 +63,7 @@ def decoraciones():
     cursor.execute(sql)
     registros = cursor.fetchall()
 
-    return render_template("decoraicones.html", decoraciones=registros)
+    return render_template("decoraciones.html", decoraciones=registros)
 
 @app.route("/paquetes")
 def paquetes():
