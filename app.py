@@ -65,7 +65,7 @@ def productos():
 
     return render_template("decoraicones.html", decoraciones=registros)
 
-    @app.route("/paquetes")
+@app.route("/paquetes")
 def productos():
     if not con.is_connected():
         con.reconnect()
