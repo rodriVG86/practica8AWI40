@@ -7,10 +7,12 @@
         </tr>
     </thead>
     <tbody>
+        {% for decoracion in decoraciones %}
         <!-- ng-repeat, solo cambiar el nombre  -->
         <tr ng-repeat="x in decoraciones">
-            <td scope="col">{{ x.idDecoracion }}</td>
-            <td scope="col">{{ x.nombreMaterial }}</td>
+            <td scope="col">{{ decoracion.idDecoracion }}</td>
+            <td scope="col">{{ decoracion.nombreMaterial }}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>

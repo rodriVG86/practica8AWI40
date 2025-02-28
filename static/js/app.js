@@ -67,22 +67,6 @@ app.run(["$rootScope", "$location", "$timeout", function($rootScope, $location, 
     })
 }])
 
-// Hay que modificarlo para los controladores
-app.controller("appCtrl", function ($scope, $http) {
-    // alert("Hola, soy el controlador app")
-})
-app.controller("productosCtrl", function ($scope, $http) {
-    // alert("Hola, soy el controlador productos")
-})
-app.controller("alumnosCtrl", function ($scope, $http) {
-})
-app.controller("ventasCtrl", function ($scope, $http) {
-})
-app.controller("reportesCtrl", function ($scope, $http) {
-})
-app.controller("notificacionesCtrl", function ($scope, $http) {
-})
-
 const DateTime = luxon.DateTime
 let lxFechaHora
 

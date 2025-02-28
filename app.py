@@ -87,4 +87,4 @@ def paquetes():
     cursor.execute(sql)
     registros = cursor.fetchall()
 
-    return render_template("paquetes.html", decoraciones=registros)
+    return render_template("paquetes.html", paquetes=registros)
