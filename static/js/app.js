@@ -16,31 +16,16 @@ app.config(function ($routeProvider, $locationProvider) {
     // y para las rutas
     $routeProvider
     .when("/", {
-        templateUrl: "/app",
-        controller: "appCtrl"
+        templateUrl: "/app"
+
     })
-    .when("/productos", {
-        templateUrl: "/productos",
-        controller: "productosCtrl"
+    .when("/decoraciones", {
+        templateUrl: "/decoraciones"
+        
     })
-    .when("/alumnos", {
-        templateUrl: "/alumnos",
-        controller: "alumnosCtrl"
-    })
-    .when("/ventas", {
-        templateUrl: "/ventas",
-        controller: "ventasCtrl"
-    })
-    .when("/reportes", {
-        templateUrl: "/reportes",
-        controller: "reportesCtrl"
-    })
-    .when("/notificaciones", {
-        templateUrl: "/notificaciones",
-        controller: "notificacionesCtrl"
-    })
-    .otherwise({
-        redirectTo: "/"
+    .when("/paquetes", {
+        templateUrl: "/paquetes"
+        
     })
 })
 app.run(["$rootScope", "$location", "$timeout", function($rootScope, $location, $timeout) {
