@@ -46,7 +46,7 @@ def app2():
     return "<h5>Hola, soy la view app</h5>"
 
 @app.route("/decoraciones")
-def productos():
+def decoraciones():
     if not con.is_connected():
         con.reconnect()
 
@@ -66,7 +66,7 @@ def productos():
     return render_template("decoraicones.html", decoraciones=registros)
 
 @app.route("/paquetes")
-def productos():
+def paquetes():
     if not con.is_connected():
         con.reconnect()
 
