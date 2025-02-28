@@ -57,12 +57,11 @@ def decoraciones():
 
     FROM decoraciones
 
-    LIMIT 10 OFFSET 0
     """
 
     cursor.execute(sql)
     registros = cursor.fetchall()
-
+    print(registros)
     return render_template("decoraciones.html", decoraciones=registros)
 
 @app.route("/paquetes")
@@ -81,10 +80,9 @@ def paquetes():
 
     FROM paquetes
 
-    LIMIT 10 OFFSET 0
     """
 
     cursor.execute(sql)
     registros = cursor.fetchall()
-
+    print(registros)
     return render_template("paquetes.html", paquetes=registros)
